@@ -98,4 +98,10 @@ class Repositories extends AbstractApi
         ));
     }
 
+    public function getFileArchive($project_id, $sha = null)
+    {
+        return $this->get('projects/'.urlencode($project_id).'/repository/archive', array(
+            'sha' => $sha
+        ));
+    }
 }
